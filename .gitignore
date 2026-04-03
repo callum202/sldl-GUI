@@ -365,3 +365,9 @@ FodyWeavers.xsd
 
 .aider*
 install.bat
+
+# sldl GUI
+sldl_gui_settings.json
+dist/
+build/
+*.spec
