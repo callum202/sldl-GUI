@@ -42,7 +42,7 @@ from PyQt6.QtWidgets import (
     QWidget,
 )
 
-SETTINGS_FILE = Path(__file__).parent / "sldl_gui_settings.json"
+SETTINGS_FILE = Path(sys.executable if getattr(sys, "frozen", False) else __file__).parent / "sldl_gui_settings.json"
 
 FORMATS = ["flac", "mp3", "ogg", "m4a", "opus", "wav", "aac", "alac"]
 
