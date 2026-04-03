@@ -460,8 +460,13 @@ class MainWindow(QMainWindow):
         browse_btn = QPushButton("Browse…")
         browse_btn.setFixedWidth(72)
         browse_btn.clicked.connect(self._browse_output)
+        open_btn = QPushButton("Open")
+        open_btn.setFixedWidth(50)
+        open_btn.setToolTip("Open output folder in File Explorer")
+        open_btn.clicked.connect(self._open_output)
         path_row.addWidget(self.path_edit)
         path_row.addWidget(browse_btn)
+        path_row.addWidget(open_btn)
         form.addRow("Output path:", path_row)
 
         # Format
@@ -780,6 +785,13 @@ class MainWindow(QMainWindow):
         d = QFileDialog.getExistingDirectory(self, "Select download folder", self.path_edit.text())
         if d:
             self.path_edit.setText(d)
+
+    def _open_output(self):
+        path = self.path_edit.text().strip()
+        if not path or not os.path.isdir(path):
+            QMessageBox.warning(self, "sldl", "Output folder doesn't exist or hasn't been set.")
+            return
+        os.startfile(path)
 
     def _browse_sldl(self):
         f, _ = QFileDialog.getOpenFileName(self, "Locate sldl executable", "", "Executables (*.exe);;All files (*)")
