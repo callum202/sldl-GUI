@@ -372,3 +372,4 @@ dist/
 build/
 *.spec
 .claude/
+dedup_folders.py
