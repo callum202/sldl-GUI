@@ -1,4 +1,6 @@
-# sldl
+# SLDL-GUI
+
+A fork of sldl, with a PyQt6 GUI frontend.
 
 ## GUI — Quick Start Guide
 
