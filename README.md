@@ -1,5 +1,65 @@
 # sldl
 
+## GUI — Quick Start Guide
+
+### What you need
+- **sldl_gui.exe** — the app
+- **sldl.exe** — the downloader (must be in the same folder)
+- A free **Soulseek** account — sign up at soulseek.com
+- A **Spotify** account (to export playlists via Exportify)
+
+---
+
+### 1. First-time setup
+
+1. Extract the RAR — keep both `.exe` files in the same folder
+2. Run `sldl_gui.exe`
+3. Go to the **Advanced** tab
+   - Click **Browse…** next to *sldl executable* and select `sldl.exe` from the same folder
+4. Go to the **Credentials** tab
+   - Enter your Soulseek **username** and **password**
+5. These settings are saved automatically — you only need to do this once
+
+---
+
+### 2. Export your Spotify playlist as a CSV
+
+1. Go to **exportify.net** in your browser
+2. Click **Get Started** and log in with your Spotify account
+3. Find the playlist you want and click **Export**
+4. Save the `.csv` file somewhere easy to find (e.g. your Desktop)
+
+---
+
+### 3. Load the CSV and download
+
+1. In the app, click **Browse CSV…** next to the Source field
+2. Select the `.csv` file you just exported — the path will fill in automatically
+3. Go to the **Options** tab
+   - Under **Format**, choose your preferred file type from the dropdown:
+     - `flac` — lossless, larger files, best quality
+     - `mp3` — smaller files, plays everywhere
+     - Leave **Strict** unchecked to allow fallback if your preferred format isn't available
+   - Set **Output path** (click Browse… to choose where files are saved)
+4. Make sure the **Number** field is blank (otherwise it'll stop after that many tracks)
+5. Click **Download**
+
+The table will fill in as tracks are found and downloaded. Green = downloaded, red = not found on Soulseek.
+
+---
+
+### Tips
+
+- **Not finding a track?** Go to **Advanced** → Extra flags and add `--desperate` — this makes sldl try harder with broader searches
+- **Want the log?** Click **Show log** to see exactly what sldl is doing
+- **Already downloaded some tracks?** Leave *Don't skip already-downloaded tracks* unchecked — the app will skip ones it's already grabbed
+
+---
+
+> **Original sldl documentation below**
+
+---
+
 A smart and configurable downloader for Soulseek. Built with Soulseek.NET.
 
 ### Features
